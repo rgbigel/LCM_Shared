@@ -1,5 +1,5 @@
 <# ============================================================================================
-  Path:       D:\Git_Repositories\SharedModules\Source\Modules
+    Path:       D:\Git_Repositories\SharedModules\Modules
   Module:     Logging.psm1
   Version:    1.0.0
   Author:     Rolf Bercht
