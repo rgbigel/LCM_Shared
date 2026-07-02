@@ -6,6 +6,10 @@ Central repository for reusable PowerShell atoms shared by multiple solutions.
 - Modules
 - docs
 
+## Docs
+- docs/ModulePolicy.md
+- docs/LoggingUpgrade.md
+
 ## Initial modules
 - Logging.psm1
 - PrivatePaths.psm1
