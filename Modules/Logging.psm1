@@ -1,18 +1,27 @@
 <# ============================================================================================
     Path:       D:\Git_Repositories\SharedModules\Modules
-  Module:     Logging.psm1
-    Version:    1.2.0
-  Author:     Rolf Bercht
-
-  Purpose:
-      Provides reusable logging utilities for scripts and modules.
-      Phase 1 adds a context-based API while preserving Write-Log compatibility.
+    Module:     Logging.psm1
+    Version:    1.3.0
+    Author:     Rolf
+    Purpose:    Provides reusable logging utilities, session log formatting, and transcript helpers.
 ============================================================================================ #>
 
-# Module-level setup: use transcript helpers when available.
 $TranscriptToolsPath = Join-Path $PSScriptRoot "TranscriptTools.psm1"
 if (Test-Path -LiteralPath $TranscriptToolsPath) {
     Import-Module -Name $TranscriptToolsPath -Force
+}
+
+function Format-SessionLogFileName {
+    [CmdletBinding()]
+    param(
+        [Parameter(Mandatory = $true)]
+        [string]$Label,
+        [string]$ComputerName = $env:COMPUTERNAME,
+        [datetime]$Timestamp = (Get-Date)
+    )
+
+    $timeStr = $Timestamp.ToString('yyyyMMdd HHmm')
+    return "$timeStr $Label $ComputerName.log"
 }
 
 function Write-Log {
@@ -26,7 +35,43 @@ function Write-Log {
         return
     }
 
-    $Message | Out-File -FilePath $LogFile -Append -Encoding UTF8
+    $timestamp = (Get-Date).ToString('yyyy-MM-dd HH:mm:ss.fff')
+    $formatted = "[$timestamp] $Message"
+    try {
+        $formatted | Out-File -FilePath $LogFile -Append -Encoding UTF8
+    } catch {
+    }
+}
+
+function Write-LogMessage {
+    [CmdletBinding()]
+    param(
+        [Parameter(Mandatory = $true)]
+        [string]$Message,
+        [string]$LogFile,
+        [ValidateSet("INFO", "WARN", "ERROR", "DEBUG")]
+        [string]$Level = "INFO",
+        [switch]$ToHost
+    )
+
+    $timestamp = (Get-Date).ToString('yyyy-MM-dd HH:mm:ss.fff')
+    $formatted = "[$timestamp] [$Level] $Message"
+
+    if ($LogFile) {
+        try {
+            $formatted | Out-File -FilePath $LogFile -Append -Encoding UTF8
+        } catch {
+        }
+    }
+
+    if ($ToHost) {
+        switch ($Level) {
+            "WARN"  { Write-Warning $Message }
+            "ERROR" { Write-Error $Message }
+            "DEBUG" { Write-Debug $Message }
+            default { Write-Host $formatted }
+        }
+    }
 }
 
 function Initialize-LogContext {
@@ -53,7 +98,6 @@ function Initialize-LogContext {
         $InteractiveMode = $false
     }
     elseif ($EnableTrace) {
-        # Global rule: trace mode implies interactive mode unless explicitly forced off.
         $InteractiveMode = $true
     }
 
@@ -98,138 +142,14 @@ function Initialize-LogContext {
         ScriptVersion      = $ScriptVersion
         LogEnabled         = $EnableLogging
         TraceEnabled       = $EnableTrace
-        InteractiveMode    = [bool]$InteractiveMode
-        NonInteractive     = [bool]$NonInteractive
+        Interactive        = $InteractiveMode
+        HostName           = $Host.Name
         RepositoryName     = $effectiveRepositoryName
-        Mode               = $Mode
-        LogRoot            = $effectiveRoot
         LogPath            = $logPath
         TranscriptStarted  = $transcriptStarted
-        FinalStatusWritten = $false
-        StartedAt          = (Get-Date)
+        Mode               = $Mode
+        TimestampUtc       = (Get-Date).ToUniversalTime().ToString("o")
     }
 }
 
-function Write-LogMessage {
-    [CmdletBinding()]
-    param(
-        [Parameter(Mandatory = $true)]
-        [psobject]$Context,
-        [Parameter(Mandatory = $true)]
-        [string]$Message,
-        [ValidateSet("INFO", "TRACE", "WARN", "ERROR", "OK", "FINAL")]
-        [string]$Level = "INFO",
-        [bool]$EmitToHost = $true
-    )
-
-    if ($Level -eq "TRACE" -and -not $Context.TraceEnabled) {
-        return
-    }
-
-    $formatted = "[$Level] $Message"
-    if ($EmitToHost) {
-        Write-Host $formatted
-    }
-
-    if ($Context.LogEnabled -and $Context.Mode -eq "File" -and -not [string]::IsNullOrWhiteSpace($Context.LogPath)) {
-        Write-Log -Message $formatted -LogFile $Context.LogPath
-    }
-}
-
-function Write-LogHeader {
-    [CmdletBinding()]
-    param(
-        [Parameter(Mandatory = $true)]
-        [psobject]$Context
-    )
-
-    Write-LogMessage -Context $Context -Message "$($Context.ScriptName) v$($Context.ScriptVersion)" -Level "INFO"
-    if ($Context.LogEnabled -and -not [string]::IsNullOrWhiteSpace($Context.LogPath)) {
-        Write-LogMessage -Context $Context -Message "Log file: $($Context.LogPath)" -Level "INFO"
-    }
-}
-
-function Write-TraceLog {
-    [CmdletBinding()]
-    param(
-        [Parameter(Mandatory = $true)]
-        [psobject]$Context,
-        [Parameter(Mandatory = $true)]
-        [string]$Message
-    )
-
-    Write-LogMessage -Context $Context -Message $Message -Level "TRACE"
-}
-
-function Write-LogFinalStatus {
-    [CmdletBinding()]
-    param(
-        [Parameter(Mandatory = $true)]
-        [psobject]$Context,
-        [Parameter(Mandatory = $true)]
-        [int]$Code,
-        [string]$Message
-    )
-
-    $state = if ($Code -eq 0) { "SUCCESS" } else { "FAILURE" }
-    Write-LogMessage -Context $Context -Message "$($Context.ScriptName) v$($Context.ScriptVersion) - $state" -Level "FINAL"
-    if (-not [string]::IsNullOrWhiteSpace($Message)) {
-        Write-LogMessage -Context $Context -Message $Message -Level "FINAL"
-    }
-
-    $Context.FinalStatusWritten = $true
-}
-
-function Invoke-InteractiveLogOffer {
-    [CmdletBinding()]
-    param(
-        [Parameter(Mandatory = $true)]
-        [psobject]$Context
-    )
-
-    if (-not $Context.InteractiveMode) {
-        return
-    }
-    if (-not $Context.FinalStatusWritten) {
-        return
-    }
-    if (-not $Context.LogEnabled -or [string]::IsNullOrWhiteSpace($Context.LogPath)) {
-        return
-    }
-
-    Write-Host "[INFO] Log available: $($Context.LogPath)"
-    $answer = Read-Host "Open this log in Notepad++ now? [y/N]"
-    if ($answer -notmatch '^(y|yes)$') {
-        return
-    }
-
-    $notepadpp = Get-Command -Name "notepad++" -ErrorAction SilentlyContinue
-    if ($null -eq $notepadpp) {
-        Write-Host "[WARN] Notepad++ was not found in PATH."
-        return
-    }
-
-    Start-Process -FilePath $notepadpp.Source -ArgumentList "`"$($Context.LogPath)`"" | Out-Null
-}
-
-function Close-LogContext {
-    [CmdletBinding()]
-    param(
-        [Parameter(Mandatory = $true)]
-        [psobject]$Context
-    )
-
-    if ($Context.Mode -eq "Transcript" -and $Context.TranscriptStarted) {
-        if (Get-Command -Name Stop-TraceTranscript -ErrorAction SilentlyContinue) {
-            Stop-TraceTranscript
-        }
-        else {
-            Stop-Transcript | Out-Null
-        }
-        $Context.TranscriptStarted = $false
-    }
-
-    Invoke-InteractiveLogOffer -Context $Context
-}
-
-Export-ModuleMember -Function Write-Log, Initialize-LogContext, Write-LogMessage, Write-LogHeader, Write-TraceLog, Write-LogFinalStatus, Close-LogContext
+Export-ModuleMember -Function Format-SessionLogFileName, Write-Log, Write-LogMessage, Initialize-LogContext
