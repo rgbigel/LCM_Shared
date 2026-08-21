@@ -2,9 +2,9 @@
 
 Module: docs/Requirements.md  
 Authors: Rolf, SharedModules Architecture Team  
-Version: 1.3.0  
+Version: 1.3.1  
 Status: Authoritative Specification  
-Date: 2026-08-16  
+Date: 2026-08-21  
 
 ---
 

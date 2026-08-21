@@ -1,14 +1,14 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Repository Test Execution Evidence",
-  "timestamp": "2026-08-16T18:04:50.3428829+02:00",
+  "timestamp": "2026-08-21T15:34:49.6831895+02:00",
   "repository_root": "D:\\Git_Repositories\\SharedModules",
   "elevation_context": "User",
   "total_count": 8,
   "passed_count": 8,
   "failed_count": 0,
   "skipped_count": 0,
-  "duration_ms": 1481,
+  "duration_ms": 0,
   "passed": true,
   "failed_containers": []
 }

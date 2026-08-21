@@ -1,6 +1,6 @@
 # SharedModules
 
-Version: 1.3.0 (LCM Governed v4.2.0)
+Version: 1.3.1 (LCM Governed v4.2.0)
 
 Central library of reusable, specialized functional **PowerShell Modules ("Atoms")** for the workspace ecosystem.
 
