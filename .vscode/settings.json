@@ -4,7 +4,7 @@
     "path": ".vscode/settings.json",
     "version": "1.0.0",
     "config_type": "vscode-repository-settings",
-    "description": "VS Code repository-local settings for SharedModules.",
+    "description": "VS Code repository-local settings for LCM_Shared.",
     "authors": [
       "Rolf"
     ],

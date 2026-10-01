@@ -1,10 +1,10 @@
-# SharedModules
+# LCM_Shared
 
 Version: 1.3.1 (LCM Governed v4.2.0)
 
 Central library of reusable, specialized functional **PowerShell Modules ("Atoms")** for the workspace ecosystem.
 
-`SharedModules` exposes cohesive, decoupled utility modules consumed by multiple repositories:
+`LCM_Shared` exposes cohesive, decoupled utility modules consumed by multiple repositories:
 - **`Logging.psm1`**: Standardized session logging, transcript capture, context initialization, and structured log message formatters.
 - **`VolumeAtoms.psm1`**: Low-level volume serial resolution (`fsutil`), filesystem attributes, filter-manager device parsing (`fltmc`), and EFI System Partition discovery by GPT type.
 - **`BcdAtoms.psm1`**: Windows Boot Configuration Data (BCD) parser, displayorder array extraction, BCD referenced volume resolution, and dual-format backup generation (`.bak` hive + annotated `.txt` snapshot).
@@ -19,7 +19,7 @@ Central library of reusable, specialized functional **PowerShell Modules ("Atoms
 - `Modules/BcdAtoms.psm1`: Shared BCD discovery, parsing, and backup atoms.
 - `Modules/PrivatePaths.psm1`: Private system paths.
 - `Modules/TranscriptTools.psm1`: Transcript helpers.
-- `tests/SharedModules.Tests.ps1`: Pester test suite for all exported atoms.
+- `tests/LCM_Shared.Tests.ps1`: Pester test suite for all exported atoms.
 - `docs/`: Requirements, architecture, standards, and LCM governance specifications.
 - `tools/`: Quality gates and elevated readiness test runner.
 

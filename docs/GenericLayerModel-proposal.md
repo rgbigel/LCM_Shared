@@ -22,7 +22,7 @@ LayerModel:
     Interface: Controlled side effects, deterministic execution.
 
   Orchestration:
-    Responsibility: Coordinate multi-step processes, multi-repo analysis, SharedModules integration.
+    Responsibility: Coordinate multi-step processes, multi-repo analysis, LCM_Shared integration.
     Interface: Deterministic sequencing, no business logic.
 
   Database:

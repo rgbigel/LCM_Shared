@@ -1,17 +1,17 @@
-# SharedModules.INVENTORY.md — Version 1.0.0
+# LCM_Shared.INVENTORY.md — Version 1.0.0
 
 ## 1. Purpose
-Define the authoritative inventory of all SharedModules interfaces and responsibilities. Track atoms, modules, interfaces, responsibilities, versioning, reuse relationships, override relationships, promotion history, and cross-repository dependencies.
+Define the authoritative inventory of all LCM_Shared interfaces and responsibilities. Track atoms, modules, interfaces, responsibilities, versioning, reuse relationships, override relationships, promotion history, and cross-repository dependencies.
 
 ## 2. Scope
-Applies to all SharedModules under D:/Git_Repositories/SharedModules.
+Applies to all LCM_Shared under D:/Git_Repositories/LCM_Shared.
 Covers Discovery, Evaluation, Reporting, and Shared atoms.
 Defines interface contracts and responsibility boundaries for cross-repo reuse.
 
-## 3. SharedModules Structure
-SharedModules/Modules/Discovery
-SharedModules/Modules/Evaluation
-SharedModules/Modules/Reporting
+## 3. LCM_Shared Structure
+LCM_Shared/Modules/Discovery
+LCM_Shared/Modules/Evaluation
+LCM_Shared/Modules/Reporting
 
 ## 4. Inventory Format
 Each entry must define:
@@ -86,7 +86,7 @@ PromotionHistory:
 StabilityGuarantees:
 
 ## 6. Cross-Repository Dependencies
-List dependencies where SharedModules atoms or modules rely on other repositories.
+List dependencies where LCM_Shared atoms or modules rely on other repositories.
 Entry:
 SharedModule:
 DependsOnRepo:
@@ -95,7 +95,7 @@ Impact:
 VersionConstraint:
 
 ## 7. Reuse Relationships
-List repositories that reuse SharedModules atoms or modules.
+List repositories that reuse LCM_Shared atoms or modules.
 Entry:
 SharedModule:
 UsedByRepo:
@@ -104,7 +104,7 @@ BehaviorMatch:
 VersionUsed:
 
 ## 8. Override Relationships
-List repositories that override SharedModules modules.
+List repositories that override LCM_Shared modules.
 Entry:
 SharedModule:
 OverriddenByRepo:
@@ -114,7 +114,7 @@ BehaviorDifference:
 ImpactAssessment:
 
 ## 9. Promotion History
-Track modules promoted from repositories into SharedModules.
+Track modules promoted from repositories into LCM_Shared.
 Entry:
 PromotedModule:
 SourceRepository:
@@ -125,7 +125,7 @@ PlacementCategory:
 Date:
 
 ## 10. Stability Guarantees
-Define stability guarantees for SharedModules interfaces.
+Define stability guarantees for LCM_Shared interfaces.
 Guarantee:
 InterfaceStability:
 VersioningPolicy:
@@ -147,13 +147,13 @@ Validation must check:
 
 ## 12. ACTIONS.md Integration
 ACTIONS.md must:
-- detect SharedModules reuse
-- detect SharedModules conflicts
-- detect SharedModules overrides
-- detect SharedModules promotion candidates
-- propose SharedModules updates
+- detect LCM_Shared reuse
+- detect LCM_Shared conflicts
+- detect LCM_Shared overrides
+- detect LCM_Shared promotion candidates
+- propose LCM_Shared updates
 - propose documentation realignment steps
-- update this inventory when SharedModules changes
+- update this inventory when LCM_Shared changes
 
 ## 13. Version
 Version: 1.0.0

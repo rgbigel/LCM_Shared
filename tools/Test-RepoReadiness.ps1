@@ -7,9 +7,9 @@ param(
 
 if ($Help) {
     Write-Host "==========================================================================" -ForegroundColor Cyan
-    Write-Host " SharedModules QUALITY GATE READINESS CHECK (Test-RepoReadiness.ps1)" -ForegroundColor Cyan
+    Write-Host " LCM_Shared QUALITY GATE READINESS CHECK (Test-RepoReadiness.ps1)" -ForegroundColor Cyan
     Write-Host "==========================================================================" -ForegroundColor Cyan
-    Write-Host "SYNOPSIS: Runs local self-readiness and LCM compliance quality checks for SharedModules."
+    Write-Host "SYNOPSIS: Runs local self-readiness and LCM compliance quality checks for LCM_Shared."
     Write-Host "USAGE:    pwsh tools/Test-RepoReadiness.ps1 [-ForceInProcess] [-h]"
     Write-Host "==========================================================================" -ForegroundColor Cyan
     return
@@ -17,7 +17,7 @@ if ($Help) {
 
 <#
 Module: Test-RepoReadiness.ps1
-Purpose: Run local self-readiness and LCM compliance quality checks for SharedModules.
+Purpose: Run local self-readiness and LCM compliance quality checks for LCM_Shared.
 Path: tools/Test-RepoReadiness.ps1
 Authors: Rolf
 Version: 1.1.0
@@ -51,5 +51,5 @@ if ((Test-Path -LiteralPath $testsDir) -and (Test-Path -LiteralPath $elevatedRun
   & $elevatedRunner @runnerArgs | Out-Host
 }
 
-Write-Host "`nSharedModules readiness check: OK" -ForegroundColor Green
+Write-Host "`nLCM_Shared readiness check: OK" -ForegroundColor Green
 

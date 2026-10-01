@@ -2,15 +2,15 @@
 
 proposal_id: SM-20260813-logging-convergence
 status: pending-review
-repository: SharedModules
+repository: LCM_Shared
 created: 20260813_194051
-scope: SharedModules; read-only observations under D:/Git_Repositories
+scope: LCM_Shared; read-only observations under D:/Git_Repositories
 
 ## Summary
 
-Use `SharedModules/Modules/Logging.psm1` as the preferred cross-repository logging baseline unless a repo-local proposal documents why a local logging implementation must remain divergent.
+Use `LCM_Shared/Modules/Logging.psm1` as the preferred cross-repository logging baseline unless a repo-local proposal documents why a local logging implementation must remain divergent.
 
-## Current SharedModules Baseline
+## Current LCM_Shared Baseline
 
 `Modules/Logging.psm1` is version `1.2.0` and provides:
 
@@ -33,11 +33,11 @@ Read-only scan under `D:/Git_Repositories` found divergent copies:
 
 ## Proposal
 
-1. Treat `SharedModules/Modules/Logging.psm1` as the current preferred baseline.
-2. Do not replace solution-specific local logging blindly. Require each proper repo to document whether local behavior should be migrated, retained as an adapter, or proposed for promotion into SharedModules.
+1. Treat `LCM_Shared/Modules/Logging.psm1` as the current preferred baseline.
+2. Do not replace solution-specific local logging blindly. Require each proper repo to document whether local behavior should be migrated, retained as an adapter, or proposed for promotion into LCM_Shared.
 3. Keep `docs/LoggingUpgrade.md` as the migration guide for consumers adopting the context API.
-4. If a local repo needs functionality not present in SharedModules, prepare a SharedModules change proposal before modifying the central module.
+4. If a local repo needs functionality not present in LCM_Shared, prepare a LCM_Shared change proposal before modifying the central module.
 
 ## Current Decision
 
-No code change to `Modules/Logging.psm1` is proposed by this scan. There is no evidence that the SharedModules copy is outdated; it is the newest discovered copy and has the most complete interface documentation.
+No code change to `Modules/Logging.psm1` is proposed by this scan. There is no evidence that the LCM_Shared copy is outdated; it is the newest discovered copy and has the most complete interface documentation.

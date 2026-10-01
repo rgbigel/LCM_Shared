@@ -1,4 +1,4 @@
-# SharedModules.Tests.ps1
+# LCM_Shared.Tests.ps1
 # Comprehensive unit tests for Logging, VolumeAtoms, and BcdAtoms (Zero Reboot Execution)
 
 Describe "Logging.psm1 Atoms" {

@@ -4,7 +4,7 @@
     "path": ".lcm/overrides.json",
     "version": "1.0.0",
     "config_type": "lcm-target-repository-overrides",
-    "description": "Documented Lifecycle Model (LCM) local overrides and rule deviations for SharedModules.",
+    "description": "Documented Lifecycle Model (LCM) local overrides and rule deviations for LCM_Shared.",
     "authors": [
       "Rolf"
     ],
@@ -12,7 +12,7 @@
       "1.0.0 - Initial LCM overrides template initialized"
     ]
   },
-  "repository": "SharedModules",
+  "repository": "LCM_Shared",
   "suppressions": [],
   "custom_rules": [],
   "validation_hooks": {

@@ -1,5 +1,5 @@
 <# ============================================================================================
-    Path:       D:\Git_Repositories\SharedModules\Modules
+    Path:       D:\Git_Repositories\LCM_Shared\Modules
   Module:     TranscriptTools.psm1
     Version:    1.1.0
   Author:     Rolf Bercht

@@ -1,5 +1,5 @@
 <# ============================================================================================
-  Path:       D:\Git_Repositories\SharedModules\Modules
+  Path:       D:\Git_Repositories\LCM_Shared\Modules
   Module:     PrivatePaths.psm1
   Version:    1.0.0
   Author:     Rolf Bercht, Copilot

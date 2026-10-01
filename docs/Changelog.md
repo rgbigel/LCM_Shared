@@ -1,7 +1,7 @@
-# SharedModules Changelog
+# LCM_Shared Changelog
 
 Module: Changelog.md
-Purpose: Record of version changes, fixes, and enhancements for SharedModules.
+Purpose: Record of version changes, fixes, and enhancements for LCM_Shared.
 Path: docs/Changelog.md
 Authors: Rolf
 Version: 1.0.1
@@ -10,7 +10,7 @@ Changelog:
 - 2026-08-16: Initial changelog created.
 
 ---
-title: SharedModules Changelog
+title: LCM_Shared Changelog
 updated: 2026-08-21
 created: 2026-08-16
 ---

@@ -15,7 +15,7 @@
 
 ## Consumer strategy
 - Repositories may keep local overrides under Modules.
-- SharedModules is the default fallback location.
+- LCM_Shared is the default fallback location.
 
 ## Private path handling
 - Machine-local roots belong in PrivatePaths.psm1, not scattered across scripts.

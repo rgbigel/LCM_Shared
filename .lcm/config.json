@@ -4,7 +4,7 @@
     "path": ".lcm/config.json",
     "version": "1.0.0",
     "config_type": "lcm-target-repository-config",
-    "description": "Lifecycle Model (LCM) local configuration for SharedModules.",
+    "description": "Lifecycle Model (LCM) local configuration for LCM_Shared.",
     "authors": [
       "Rolf"
     ],
@@ -13,16 +13,16 @@
     ]
   },
   "repository": {
-    "name": "SharedModules",
+    "name": "LCM_Shared",
     "primary_language": "PowerShell",
     "module_root": "tools",
-    "description": "Solution component: SharedModules",
+    "description": "Solution component: LCM_Shared",
     "author": "Rolf",
     "onboarded_at": "2026-08-16T17:33:51+02:00"
   },
   "governance": {
     "lcm_version": "8.0.0",
-    "workspace_authority": "D:\\Git_Repositories\\Workspace_AI",
+    "workspace_authority": "D:\\Git_Repositories\\LCM_AI",
     "immutable_links": {
       "junctions": [
         ".agents/rules/core",

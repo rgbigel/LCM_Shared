@@ -1,7 +1,7 @@
-# SharedModules Standards & Conventions
+# LCM_Shared Standards & Conventions
 
 Module: Standards.md
-Purpose: Code conventions, formatting rules, and development standards for SharedModules.
+Purpose: Code conventions, formatting rules, and development standards for LCM_Shared.
 Path: docs/Standards.md
 Authors: Rolf
 Version: 1.0.0
@@ -9,7 +9,7 @@ Changelog:
 - 2026-08-16: Initial standards scaffolding.
 
 ---
-title: SharedModules Standards
+title: LCM_Shared Standards
 updated: 2026-08-16
 created: 2026-08-16
 ---
