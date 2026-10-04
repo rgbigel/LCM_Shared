@@ -39,5 +39,6 @@ Central library of reusable, specialized functional **PowerShell Modules ("Atoms
 
 - **[Requirements.md](docs/Requirements.md)** — Functional specifications and exported atom contracts.
 - **[Architecture.md](docs/Architecture.md)** — Architectural design and cross-repository dependency topology.
+- **[Implementation.md](docs/Implementation.md)** — Current module, test, and repository-layout inventory.
 - **[Standards.md](docs/Standards.md)** — Module standards and LCM governance rules.
 - **[Changelog.md](docs/Changelog.md)** — Release history.
