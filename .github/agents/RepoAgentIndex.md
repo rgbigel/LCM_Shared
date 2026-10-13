@@ -4,14 +4,14 @@ Module: RepoAgentIndex.md
 Purpose: Local repository agent and subagent index for LCM_Shared.
 Path: .github/agents/RepoAgentIndex.md
 Authors: Rolf
-Version: 1.0.0
+Version: 10.0.0
 Changelog:
-- 2026-08-16: Initial creation by LCM Onboarding Engine.
+- 2026-10-13: Initial creation by LCM Onboarding Engine.
 
 ---
 title: LCM_Shared Agent Index
-updated: 2026-08-16
-created: 2026-08-16
+updated: 2026-10-13
+created: 2026-10-13
 ---
 
 ## 1. Overview

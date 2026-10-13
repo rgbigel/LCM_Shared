@@ -1,7 +1,7 @@
 <# ============================================================================================
     Path:       D:\Git_Repositories\LCM_Shared\Modules
     Module:     VolumeAtoms.psm1
-    Version:    1.0.0
+    Version:    10.0.0
     Author:     Rolf
     Purpose:    Reusable storage, volume serial resolution, partition correlation, and EFI discovery atoms.
 ============================================================================================ #>

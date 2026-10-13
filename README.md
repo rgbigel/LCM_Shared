@@ -1,6 +1,6 @@
 # LCM_Shared
 
-Version: 1.3.1 (LCM Governed v4.2.0)
+Version: 10.0.0 (LCM Governed 10.0.0)
 
 Central library of reusable, specialized functional **PowerShell Modules ("Atoms")** for the workspace ecosystem.
 

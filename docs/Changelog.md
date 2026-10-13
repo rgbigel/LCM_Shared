@@ -4,23 +4,23 @@ Module: Changelog.md
 Purpose: Record of version changes, fixes, and enhancements for LCM_Shared.
 Path: docs/Changelog.md
 Authors: Rolf
-Version: 1.0.1
+Version: 10.0.0
 Changelog:
-- 2026-08-21: Bumped version to 1.3.1 and aligned LCM baseline.
-- 2026-08-16: Initial changelog created.
+- 2026-10-13: Bumped version to 10.0.0 and aligned LCM baseline.
+- 2026-10-13: Initial changelog created.
 
 ---
 title: LCM_Shared Changelog
-updated: 2026-08-21
-created: 2026-08-16
+updated: 2026-10-13
+created: 2026-10-13
 ---
 
-## [1.3.1] - 2026-08-21
+## [10.0.0] - 2026-10-13
 ### Changed
-- Advanced version to 1.3.1 (+0.0.1 patch release).
-- Synchronized governance baseline to v5.0.1 and updated .gitignore entries.
+- Advanced version to 10.0.0 (+10.0.0 patch release).
+- Synchronized governance baseline to 10.0.0 and updated .gitignore entries.
 
-## [1.0.0] - 2026-08-16
+## [10.0.0] - 2026-10-13
 ### Added
 - Initial onboarding into Lifecycle Model (LCM) governance ecosystem.
 - Configured immutable core rule junctions and local override manifests.

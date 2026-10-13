@@ -12,7 +12,7 @@ Use `LCM_Shared/Modules/Logging.psm1` as the preferred cross-repository logging 
 
 ## Current LCM_Shared Baseline
 
-`Modules/Logging.psm1` is version `1.2.0` and provides:
+`Modules/Logging.psm1` is version `10.0.0` and provides:
 
 - Legacy compatibility: `Write-Log`.
 - Context API: `Initialize-LogContext`, `Write-LogMessage`, `Write-LogHeader`, `Write-TraceLog`, `Write-LogFinalStatus`, `Close-LogContext`.

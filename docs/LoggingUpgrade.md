@@ -1,6 +1,6 @@
 # Logging Module Upgrade Notes
 
-This document describes interface changes introduced by `Modules/Logging.psm1` v1.2.0 and what repositories must update when migrating.
+This document describes interface changes introduced by `Modules/Logging.psm1` 10.0.0 and what repositories must update when migrating.
 
 ## Scope of change
 - Legacy function remains available: `Write-Log`
@@ -11,7 +11,7 @@ This document describes interface changes introduced by `Modules/Logging.psm1` v
 - Existing calls to `Write-Log -Message <...> -LogFile <...>` continue to work.
 - Migration can be phased: old calls may coexist temporarily with new API.
 
-## New exported interface (v1.2.0)
+## New exported interface (10.0.0)
 - `Initialize-LogContext`
 - `Write-LogMessage`
 - `Write-LogHeader`
@@ -74,7 +74,7 @@ The migration should not change:
 
 ## Minimal migration template
 ```powershell
-$ctx = Initialize-LogContext -ScriptName "MyScript.ps1" -ScriptVersion "1.0.0" -EnableLogging:$true -EnableTrace:$TraceMode -InteractiveMode:$InteractiveMode -NonInteractive:$NonInteractive -RequireInteractiveModeInInteractiveHost:$EnforceInteractivePolicy -Mode "Transcript"
+$ctx = Initialize-LogContext -ScriptName "MyScript.ps1" -ScriptVersion "10.0.0" -EnableLogging:$true -EnableTrace:$TraceMode -InteractiveMode:$InteractiveMode -NonInteractive:$NonInteractive -RequireInteractiveModeInInteractiveHost:$EnforceInteractivePolicy -Mode "Transcript"
 Write-LogHeader -Context $ctx
 
 try {

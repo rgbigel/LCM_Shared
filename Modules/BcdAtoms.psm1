@@ -1,7 +1,7 @@
 <# ============================================================================================
     Path:       D:\Git_Repositories\LCM_Shared\Modules
     Module:     BcdAtoms.psm1
-    Version:    1.0.0
+    Version:    10.0.0
     Author:     Rolf
     Purpose:    Reusable BCD discovery, object parser, displayorder parser, and dual-format backup atoms.
 ============================================================================================ #>

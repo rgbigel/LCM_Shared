@@ -4,9 +4,9 @@ Module: docs/Architecture.md
 Purpose: Architectural design, satellite relationship with LCM_Inventory, and component layout for LCM_Shared.  
 Path: docs/Architecture.md  
 Authors: Rolf, LCM_Shared Architecture Team  
-Version: 1.1.0  
+Version: 10.0.0
 Status: Working Draft (NOT Source of Truth - Architectural Concept)  
-Date: 2026-09-28  
+Date: 2026-10-13
 
 ---
 

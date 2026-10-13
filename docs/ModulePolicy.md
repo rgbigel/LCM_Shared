@@ -10,7 +10,7 @@
 
 ## Logging interface upgrades
 - Logging module migration guidance is documented in `docs/LoggingUpgrade.md`.
-- Repositories adopting Logging v1.2.0 should migrate local logging helpers to the shared context API.
+- Repositories adopting Logging 10.0.0 should migrate local logging helpers to the shared context API.
 - Keep `Write-Log` only as a temporary compatibility path during phased migrations.
 
 ## Consumer strategy

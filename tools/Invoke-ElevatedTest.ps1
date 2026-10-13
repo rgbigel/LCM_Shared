@@ -3,10 +3,10 @@ Module: tools/Invoke-ElevatedTest.ps1
 Purpose: Runs Pester test suites with automatic Administrator elevation handoff and structured JSON evidence generation.
 Path: tools/Invoke-ElevatedTest.ps1
 Authors: Rolf, LCM_AI Engine
-Version: 1.0.0
-Date: 2026-08-16
+Version: 10.0.0
+Date: 2026-10-13
 Changelog:
-- 2026-08-16: Initial standardized implementation of elevated test runner with JSON evidence streaming.
+- 2026-10-13: Initial standardized implementation of elevated test runner with JSON evidence streaming.
 #>
 
 [CmdletBinding()]
@@ -93,7 +93,7 @@ if ($isAdmin -or (-not $needsElevation) -or $ForceInProcess) {
     if ($loadedPester -and $loadedPester.Version.Major -lt 5) {
         Remove-Module Pester -Force -ErrorAction SilentlyContinue
     }
-    Import-Module Pester -MinimumVersion 5.0.0 -Force -ErrorAction SilentlyContinue
+    Import-Module Pester -MinimumVersion 10.0.0 -Force -ErrorAction SilentlyContinue
     $pesterResults = Invoke-Pester -Path $TestPath -PassThru
 
     $passed = ($pesterResults.FailedCount -eq 0)

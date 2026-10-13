@@ -4,14 +4,14 @@ Module: Standards.md
 Purpose: Code conventions, formatting rules, and development standards for LCM_Shared.
 Path: docs/Standards.md
 Authors: Rolf
-Version: 1.0.0
+Version: 10.0.0
 Changelog:
-- 2026-08-16: Initial standards scaffolding.
+- 2026-10-13: Initial standards scaffolding.
 
 ---
 title: LCM_Shared Standards
-updated: 2026-08-16
-created: 2026-08-16
+updated: 2026-10-13
+created: 2026-10-13
 ---
 
 ## 1. Universal Formatting Invariants
