@@ -16,7 +16,7 @@ Describe "Logging.psm1 Atoms" {
 
     It "formats session log filenames according to convention" {
         $fileName = Format-SessionLogFileName -Label 'BOOT_ESP' -ComputerName 'TEST_HOST' -Timestamp (Get-Date '2026-10-13 14:30:00')
-        $fileName | Should -Be '20260816 1430 BOOT_ESP TEST_HOST.log'
+        $fileName | Should -Be '20261013 1430 BOOT_ESP TEST_HOST.log'
     }
 
     It "writes structured log messages to file cleanly" {
