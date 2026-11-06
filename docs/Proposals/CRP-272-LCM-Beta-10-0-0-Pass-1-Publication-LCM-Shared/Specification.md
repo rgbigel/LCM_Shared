@@ -1,6 +1,6 @@
-# Change Request Proposal: CRP-272
+﻿# Change Request Proposal: CRP-272
 
-`yaml
+```yaml
 CRP-ID: CRP-272
 Title: LCM Beta 10.0.0 Pass 1 Publication - LCM_Shared
 Scope: LCM_Shared
@@ -12,7 +12,7 @@ Plan-State: suggested
 Progress-State: undecided
 Priority: High
 App-ID: None
-`
+```
 
 ---
 
