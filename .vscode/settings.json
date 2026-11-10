@@ -2,7 +2,7 @@
   "meta": {
     "module": "settings.json",
     "path": ".vscode/settings.json",
-    "version": "10.0.0",
+    "version": "10.2.0",
     "config_type": "vscode-repository-settings",
     "description": "VS Code repository-local settings for LCM_Shared.",
     "authors": [

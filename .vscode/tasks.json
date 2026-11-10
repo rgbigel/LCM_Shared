@@ -3,7 +3,7 @@
     "config_version": "2026-10-13",
     "config_path": ".vscode/tasks.json"
   },
-  "version": "10.0.0",
+  "version": "10.2.0",
   "tasks": [
     {
       "label": "Test Repository Readiness",

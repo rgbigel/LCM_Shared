@@ -156,4 +156,4 @@ ACTIONS.md must:
 - update this inventory when LCM_Shared changes
 
 ## 13. Version
-Version: 10.0.0
+Version: 10.2.0

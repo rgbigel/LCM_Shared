@@ -4,7 +4,7 @@ Module: Changelog.md
 Purpose: Record of version changes, fixes, and enhancements for LCM_Shared.
 Path: docs/Changelog.md
 Authors: Rolf
-Version: 10.0.0
+Version: 10.2.0
 Changelog:
 - 2026-10-13: Bumped version to 10.0.0 and aligned LCM baseline.
 - 2026-10-13: Initial changelog created.

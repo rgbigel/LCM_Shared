@@ -20,7 +20,7 @@ Module: Test-RepoReadiness.ps1
 Purpose: Run local self-readiness and LCM compliance quality checks for LCM_Shared.
 Path: tools/Test-RepoReadiness.ps1
 Authors: Rolf
-Version: 10.0.0
+Version: 10.2.0
 Changelog:
 - 2026-10-13: Added elevated test runner integration and ForceInProcess pass-through.
 - 2026-10-13: Initial readiness runner instantiated.

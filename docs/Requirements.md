@@ -2,7 +2,7 @@
 
 Module: docs/Requirements.md  
 Authors: Rolf, LCM_Shared Architecture Team  
-Version: 10.0.0
+Version: 10.2.0
 Status: Working Draft (NOT Source of Truth - Architectural Concept)  
 Date: 2026-10-13
 
