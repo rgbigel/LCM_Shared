@@ -3,3 +3,8 @@
 .agents/
 data/readiness/
 out/
+
+# LCM Proposals, DoT, and Scratch are exclusive to LCM_Inventory
+docs/Proposals/
+DoT/
+scratch/
