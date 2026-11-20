@@ -1,6 +1,11 @@
 # LCM_Shared
 
-Version: 10.0.0 (LCM Governed 10.0.0)
+Module: README.md  
+Purpose: Executive summary and index of LCM_Shared, the central library of reusable modules (atoms).  
+Path: LCM_Shared/README.md  
+Authors: Rolf, Claude  
+Version: 10.8.4  
+Date: 2026-11-20
 
 Central library of reusable, specialized functional **PowerShell Modules ("Atoms")** for the workspace ecosystem.
 
