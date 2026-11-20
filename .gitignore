@@ -8,3 +8,5 @@ out/
 docs/Proposals/
 DoT/
 scratch/
+# Python byte-code caches (BUG-377)
+__pycache__/
